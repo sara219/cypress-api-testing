@@ -46,6 +46,8 @@ describe('POST CALLS', () => {
       }).then((res) => {
         expect(res.status).to.eql(201)
         expect(res.body.tourist_name).to.eql(reqData.tourist_name)
+
+        expect(res.body).has.property('tourist_email', reqData.tourist_email)
       })
     })
   })
